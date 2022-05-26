@@ -20,6 +20,8 @@ import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import AlbumOutlinedIcon from '@mui/icons-material/AlbumOutlined';
 import AudiotrackOutlinedIcon from '@mui/icons-material/AudiotrackOutlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
+import {useRouter} from "next/router";
+import Link from "next/link";
 
 const drawerWidth = 240;
 
@@ -68,6 +70,7 @@ interface AppBarProps extends MuiAppBarProps {
 const AppBar = styled(MuiAppBar, {
     shouldForwardProp: (prop) => prop !== 'open',
 })<AppBarProps>(({ theme, open }) => ({
+    color: 'white',
     boxShadow: 'none',
     backgroundColor: theme.palette.secondary.dark,
     zIndex: theme.zIndex.drawer + 1,
@@ -112,13 +115,17 @@ const StyledListIconItem = styled(ListItemIcon, )(
         padding: 10,
         borderRadius: theme.shape.borderRadius,
         justifyContent: 'center',
+        '&.active': {
+            backgroundColor: theme.palette.primary.main,
+        }
     }),
 );
 
 
 export default function NavBar() {
     const theme = useTheme();
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = React.useState(true);
+    const router = useRouter()
 
     const handleDrawerOpen = () => {
         setOpen(true);
@@ -139,6 +146,7 @@ export default function NavBar() {
                         onClick={handleDrawerOpen}
                         edge="start"
                         sx={{
+                            color: 'white',
                             marginRight: 5,
                             ...(open && { display: 'none' }),
                         }}
@@ -155,12 +163,16 @@ export default function NavBar() {
                     <svg width="50" height="50" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect opacity="0.7" width="70" height="70" rx="35" fill="#939393"/>
                     </svg>
-                    <IconButton onClick={handleDrawerClose}>
+                    <IconButton
+                        onClick={handleDrawerClose}
+                        sx={{ color: 'white',}}
+                    >
                         {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
                     </IconButton>
                 </DrawerHeader>
                 <List>
                     {navbarListItems.map(({name, path, icon}, index) => (
+                        <Link href={path}>
                         <ListItem key={path} disablePadding sx={{ display: 'block' }}>
                             <ListItemButton
                                 sx={{
@@ -170,7 +182,9 @@ export default function NavBar() {
                                 }}
                             >
                                 <StyledListIconItem
+                                    className={router.pathname == path ? 'active' : ''}
                                     sx={{
+                                        color: 'white',
                                         mr: open ? 3 : 'auto',
                                     }}
                                 >
@@ -179,6 +193,7 @@ export default function NavBar() {
                                 <ListItemText primary={name} sx={{ opacity: open ? 1 : 0 }} />
                             </ListItemButton>
                         </ListItem>
+                        </Link>
                     ))}
                 </List>
             </Drawer>

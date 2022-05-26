@@ -1,9 +1,9 @@
 import NavBar from "../components/NavBar";
+import MainLayout from "../layouts/MainLayout";
 
 const Home = () => {
     return (
-        <>
-            <NavBar/>
+        <div>
             <div className='center'>
                 <h1>Home</h1>
             </div>
@@ -19,7 +19,7 @@ const Home = () => {
                   }
                 `}
             </style>
-        </>
+        </div>
     )
 }
 

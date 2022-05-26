@@ -6,7 +6,6 @@ export const theme = createTheme({
             paper: '#000',
             default: '#000',
         },
-        mode: 'dark',
         text: {
             primary: "#fff"
         },
