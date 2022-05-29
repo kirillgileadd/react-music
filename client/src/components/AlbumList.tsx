@@ -12,7 +12,7 @@ const AlbumList:FC<AlbumListProps> = ({albums}) => {
     return (
         <Grid container spacing={2} >
             <List items={albums} renderItem={(album) =>
-                <Grid item xs={2}>
+                <Grid item xs={2} key={album._id}>
                     <AlbumItem {...album}/>
                 </Grid>}
             />

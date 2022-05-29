@@ -1,10 +1,10 @@
 import React, {FC, useState} from 'react';
-import {Title} from "../UI/Title";
+import {Title} from "../../UI/Title";
 import {Grid} from "@mui/material";
-import List from "../components/List";
-import AlbumItem from "../components/AlbumItem";
-import {IArtist} from "../models/IArtist";
-import ArtistItem from "../components/ArtistItem";
+import List from "../../components/List";
+import AlbumItem from "../../components/AlbumItem";
+import {IArtist} from "../../models/IArtist";
+import ArtistItem from "../../components/ArtistItem";
 
 const Artists: FC = () => {
     const [artists, setArtists] = useState<IArtist[]>([

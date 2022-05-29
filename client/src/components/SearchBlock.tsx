@@ -7,7 +7,7 @@ interface SearchBlockProps {
 
 const SearchBlock:FC<SearchBlockProps> = ({search}) => {
     return (
-        <Box sx={{minHeight: "100vh", backgroundColor: ''}}>
+        <Box sx={{minHeight: "calc(100vh - 200px)", backgroundColor: ''}}>
             {search}
         </Box>
     );

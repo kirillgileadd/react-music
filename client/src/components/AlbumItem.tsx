@@ -43,7 +43,7 @@ const AlbumImage = styled('img')`
 
 const AlbumItem:FC<IAlbum> = ({picture, artist,tracks,_id,name}) => {
     return (
-        <RouterLink to={_id}>
+        <RouterLink to={`/albums/${_id}`}>
             <Album>
                 <AlbumImage src={picture} />
                 <Typography variant={'body1'}>

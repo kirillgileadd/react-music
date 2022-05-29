@@ -5,6 +5,10 @@ import App from './App';
 import {BrowserRouter} from "react-router-dom";
 import {ThemeProvider} from "@mui/material";
 import {theme} from "./theme/theme";
+import {Provider} from "react-redux";
+import {setupStore} from "./store/store";
+
+const store = setupStore()
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
@@ -12,9 +16,11 @@ const root = ReactDOM.createRoot(
 root.render(
     <React.StrictMode>
         <ThemeProvider theme={theme}>
+            <Provider store={store}>
             <BrowserRouter>
                 <App/>
             </BrowserRouter>
+            </Provider>
         </ThemeProvider>
     </React.StrictMode>
 );
