@@ -49,7 +49,7 @@ const ArtistItem: FC<IArtist> = ({albums, name, tracks, _id, picture}) => {
     return (
         <RouterLink to={_id}>
             <Artist>
-                <ArtistImage src={picture}/>
+                <ArtistImage src={picture ?? 'https://img08.rl0.ru/afisha/e904x508p0x178f4000x2286q85i/s.afisha.ru/mediastorage/92/02/a49aecadc4d0446785ee9cad0292.jpg'}/>
                 <Typography variant={'body1'} sx={{mb: 1}}>
                     {name}
                 </Typography>

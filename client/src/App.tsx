@@ -1,8 +1,15 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Layout from "./layout/Layout";
-import AppRouter from "./components/AppRouter";
+import {fetchArtists} from "./store/action-creators/artist";
+import {useAppDispatch} from "./hook/redux";
 
 function App() {
+    const dispatch = useAppDispatch()
+
+    useEffect(() => {
+        dispatch(fetchArtists())
+    }, [])
+
   return (
     <div className="App">
       <Layout/>

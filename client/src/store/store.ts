@@ -1,8 +1,10 @@
 import {combineReducers, configureStore} from "@reduxjs/toolkit";
 import trackReducer from './reducers/trackSlice'
+import artistReducer from './reducers/artistSlice'
 
 const rootReducer = combineReducers({
-    track: trackReducer
+    track: trackReducer,
+    artist: artistReducer,
 })
 
 export const setupStore = () => {

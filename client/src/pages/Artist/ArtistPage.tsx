@@ -58,35 +58,7 @@ const ArtistPage: FC = () => {
                 name: 'trouble\'s coming'
             },
         ],
-        tracks: [{
-            _id: '123',
-            name: "Oblivion",
-            picture: 'https://2di5lnx4t933o2set3vt5ojl-wpengine.netdna-ssl.com/wp-content/uploads/2020/09/M_royalblood_92120.jpg',
-            album: 'trouble\'s coming',
-            text: 'text', listens: 10,
-            audio: '123',
-            artist: 'Royal Blood'
-        },
-            {
-                _id: '124',
-                name: "Radio",
-                picture: 'https://2di5lnx4t933o2set3vt5ojl-wpengine.netdna-ssl.com/wp-content/uploads/2020/09/M_royalblood_92120.jpg',
-                album: 'trouble\'s coming',
-                text: 'text',
-                listens: 10,
-                audio: '123',
-                artist: 'Royal Blood'
-            },
-            {
-                _id: '125',
-                name: "Oblivion",
-                picture: 'https://2di5lnx4t933o2set3vt5ojl-wpengine.netdna-ssl.com/wp-content/uploads/2020/09/M_royalblood_92120.jpg',
-                album: 'trouble\'s coming',
-                text: 'text',
-                listens: 10,
-                audio: '123',
-                artist: 'Royal Blood'
-            }],
+        tracks: [],
         name: 'Royal Blood',
         picture: 'https://yt3.ggpht.com/Au8KjCt3N0qeVqRmFqU0aW5B2QsZlqKoCAbSQm_TkADNxOiCp4ToaRzmRrexbLdXF18PVnVyQQ=s900-c-k-c0x00ffffff-no-rj'
     })
@@ -128,7 +100,7 @@ const ArtistPage: FC = () => {
                 <Title sx={{mb: 2}}>
                     Popular albums
                 </Title>
-                <AlbumList albums={artist.albums}/>
+                {/*<AlbumList albums={artist.albums}/>*/}
             </Box>
             <AddMusicModal open={modalVisible} setOpen={setModalVisible}/>
         </Box>

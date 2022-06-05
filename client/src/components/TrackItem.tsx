@@ -52,7 +52,6 @@ const TrackItem: FC<ITrack> =
          name,
          text,
          picture,
-         album
      }) => {
         return (
             <Track>
@@ -64,8 +63,8 @@ const TrackItem: FC<ITrack> =
                         <TrackImage src={picture} alt=""/>
                         <Typography sx={{ml: 2}}>{name}</Typography>
                     </Grid>
-                    <Grid item xs={3}>{artist}</Grid>
-                    <Grid item xs={3}>{album}</Grid>
+                    <Grid item xs={3}>{artist.name}</Grid>
+                    <Grid item xs={3}>Single</Grid>
                     <Grid item xs={0.5}>TIME</Grid>
                 </Grid>
             </Track>

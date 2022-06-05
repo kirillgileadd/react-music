@@ -10,7 +10,6 @@ import {Artist, ArtistSchema} from "../artist/schema/artist.schema";
 @Module({
     imports: [
         MongooseModule.forFeature([{name: Track.name, schema: TrackSchema}]),
-        MongooseModule.forFeature([{name: Album.name, schema: AlbumSchema}]),
         MongooseModule.forFeature([{name: Artist.name, schema: ArtistSchema}]),
     ],
     controllers: [TrackController],
